@@ -40,6 +40,10 @@ class CrawlIndustry extends Command
     public function handle()
     {
         $categories = Category::pluck('name')->toArray();
+
+        if (!count($categories)) {
+            return $this->info('No category to choose. Please load the category first');
+        }
         
         $category = $this->choice('What is your name?', $categories, 'Company');
 

@@ -15,6 +15,7 @@ class TableIndustryDetails extends Migration
     {
         Schema::create('industry_details', function (Blueprint $table) {
             $table->id();
+            $table->longText('description')->nullable();
             $table->unsignedInteger('industry_list_id')->nullable(false);
             $table->date('incorporation_date')->nullable();
             $table->unsignedInteger('registration_number')->nullable();
